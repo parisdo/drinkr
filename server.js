@@ -11,7 +11,8 @@ const handlebars = require('express-handlebars');
 const mongoose = require('mongoose');
 const passport = require('passport');
 
-// require("dotenv").load();
+
+require("dotenv").load();
 
 var models = require("./models");
 
@@ -31,9 +32,7 @@ var strategy = {
 
 // Database Connection
 var db = mongoose.connection;
-console.log(db);
-mongoose.connect('mongodb://heroku_cqj5br7d:glkmerakoste2ioudgk1b5ir9r@ds123410.mlab.com:23410/heroku_cqj5br7d');
-
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://127.0.0.1/cogs121');
 db.on('error', console.error.bind(console, 'Mongo DB Connection Error:'));
 db.once('open', function(callback) {
     console.log("Database connected successfully.");
@@ -49,7 +48,7 @@ var session_middleware = session({
 });
 
 // Middleware
-app.set("port", process.env.PORT || 8080);
+app.set("port", process.env.PORT || 3000);
 app.engine('html', handlebars({ defaultLayout: 'layout', extname: '.html' }));
 app.set("view engine", "html");
 app.set("views", __dirname + "/views");
