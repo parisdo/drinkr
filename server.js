@@ -47,7 +47,7 @@ var session_middleware = session({
 });
 
 // Middleware
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 8080);
 app.engine('html', handlebars({ defaultLayout: 'layout', extname: '.html' }));
 app.set("view engine", "html");
 app.set("views", __dirname + "/views");
