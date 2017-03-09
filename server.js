@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 
 
-require("dotenv").load();
+// require("dotenv").load();
 
 var models = require("./models");
 
@@ -22,7 +22,8 @@ var router = {
 };
 
 var parser = {
-    body: require("body-parser"),
+    body: requi
+    re("body-parser"),
     cookie: require("cookie-parser")
 };
 
