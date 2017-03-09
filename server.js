@@ -11,7 +11,7 @@ const handlebars = require('express-handlebars');
 const mongoose = require('mongoose');
 const passport = require('passport');
 
-require("dotenv").load();
+// require("dotenv").load();
 
 var models = require("./models");
 
