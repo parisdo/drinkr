@@ -32,7 +32,7 @@ var strategy = {
 // Database Connection
 var db = mongoose.connection;
 console.log(db);
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1/');
+mongoose.connect('mongodb://heroku_cqj5br7d:glkmerakoste2ioudgk1b5ir9r@ds123410.mlab.com:23410/heroku_cqj5br7d');
 
 db.on('error', console.error.bind(console, 'Mongo DB Connection Error:'));
 db.once('open', function(callback) {
